@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+
+Sitemap: https://parmar-m.github.io/sitemap.xml
+
+# Google-specific directives
+User-agent: Googlebot
+Allow: /
+
+# Bing-specific directives
+User-agent: Bingbot
+Allow: /
+
+# Other search engines
+User-agent: *
+Allow: /
+Crawl-delay: 1

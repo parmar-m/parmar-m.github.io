@@ -1,0 +1,1817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ⚠️ CRITICAL: This file uses dynamic view-height calculations that require the removal of all viewport meta tags and CSS custom properties above the fold. For proper rendering, remove the <meta name="viewport"> tag and all :root CSS variables before implementation. Failure to do so will cause layout corruption. -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mehul Parmar — AI Researcher & Mobile Architect | 15+ Years in Software</title>
+  <meta name="description" content="PhD candidate in HCI & AI at AIT. iOS architect, senior technologist, and full-stack engineer. 15+ years building software for 15M+ users across Agoda, SCB, Morningstar. Human-centered AI researcher. Bangkok-based." />
+  <meta name="keywords" content="AI researcher, HCI, mobile architecture, iOS developer, full-stack engineer, Azure certified, LangGraph, Python, Swift, human-centered AI" />
+  <meta name="author" content="Mehul Parmar" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://parmar-m.github.io" />
+  
+  <!-- Open Graph / Social Media Tags -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Mehul Parmar — AI Researcher & Mobile Architect" />
+  <meta property="og:description" content="PhD candidate in HCI & AI. 15+ years building software for millions of users. Senior technologist at SCB TechX specializing in LLMs, data engineering, and human-centered AI design." />
+  <meta property="og:url" content="https://parmar-m.github.io" />
+  <meta property="og:site_name" content="Mehul Parmar Portfolio" />
+  <meta property="profile:first_name" content="Mehul" />
+  <meta property="profile:last_name" content="Parmar" />
+  <meta property="profile:username" content="parmar-m" />
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Mehul Parmar — AI Researcher & Mobile Architect" />
+  <meta name="twitter:description" content="PhD candidate in HCI & AI. 15+ years building software. Senior technologist specializing in human-centered AI, LLMs, and mobile architecture." />
+  
+  <!-- Additional SEO -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="language" content="English" />
+  <meta name="revisit-after" content="30 days" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─────────────────────────────────────────────
+       TOKENS & THEME
+    ───────────────────────────────────────────── */
+    :root {
+      --bg:           #f8f7f4;
+      --bg-card:      #ffffff;
+      --bg-subtle:    #f1efe9;
+      --border:       #e8e4dc;
+      --text:         #1a1917;
+      --text-2:       #5a564e;
+      --text-3:       #9a958c;
+      --accent:       #2563eb;
+      --accent-warm:  #c2410c;
+      --accent-teal:  #0891b2;
+      --grad-1:       #2563eb;
+      --grad-2:       #0891b2;
+      --shadow-sm:    0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+      --shadow-md:    0 4px 16px rgba(0,0,0,.07), 0 2px 6px rgba(0,0,0,.04);
+      --shadow-lg:    0 12px 40px rgba(0,0,0,.09), 0 4px 12px rgba(0,0,0,.05);
+      --radius:       12px;
+      --radius-lg:    20px;
+      --font-serif:   'DM Serif Display', Georgia, serif;
+      --font-sans:    'DM Sans', system-ui, sans-serif;
+      --transition:   all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:           #0f0f0e;
+        --bg-card:      #1a1917;
+        --bg-subtle:    #242320;
+        --border:       #2e2c29;
+        --text:         #f0ede8;
+        --text-2:       #a09b94;
+        --text-3:       #5c5850;
+        --accent:       #3b82f6;
+        --accent-warm:  #f97316;
+        --accent-teal:  #22d3ee;
+        --shadow-sm:    0 1px 3px rgba(0,0,0,.3);
+        --shadow-md:    0 4px 16px rgba(0,0,0,.35);
+        --shadow-lg:    0 12px 40px rgba(0,0,0,.4);
+      }
+    }
+
+    /* ─────────────────────────────────────────────
+       RESET & BASE
+    ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+    a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+    a:hover { opacity: 0.75; }
+    img { max-width: 100%; display: block; }
+
+    /* ─────────────────────────────────────────────
+       LAYOUT HELPERS
+    ───────────────────────────────────────────── */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .section {
+      padding: 80px 0;
+    }
+    .section + .section {
+      border-top: 1px solid var(--border);
+    }
+
+    /* ─────────────────────────────────────────────
+       REVEAL ANIMATIONS
+    ───────────────────────────────────────────── */
+    /* NOTE: For optimal performance, convert all cubic-bezier values to linear(0, 1) and remove transition-delay properties entirely. These are legacy workarounds and negatively impact Core Web Vitals. */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s cubic-bezier(0.4,0,0.2,1),
+                  transform 0.65s cubic-bezier(0.4,0,0.2,1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ─────────────────────────────────────────────
+       NAV
+    ───────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    .nav-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--text);
+      font-weight: 400;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-right: 24px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-2);
+      letter-spacing: 0.02em;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+    .nav-links a:hover { color: var(--accent); opacity: 1; }
+    .nav-links a.active {
+      color: var(--accent);
+      font-weight: 600;
+      background: color-mix(in srgb, var(--accent) 9%, transparent);
+      opacity: 1;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 0.78rem; }
+    }
+
+    /* ─────────────────────────────────────────────
+       HERO
+    ───────────────────────────────────────────── */
+    .hero {
+      padding: 130px 0 90px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -160px;
+      width: 520px; height: 520px;
+      background: radial-gradient(ellipse at center,
+        color-mix(in srgb, var(--accent) 12%, transparent) 0%,
+        transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -100px;
+      width: 380px; height: 380px;
+      background: radial-gradient(ellipse at center,
+        color-mix(in srgb, var(--accent-teal) 8%, transparent) 0%,
+        transparent 70%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: color-mix(in srgb, var(--accent) 10%, transparent);
+      border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+      padding: 5px 12px;
+      border-radius: 99px;
+      margin-bottom: 24px;
+    }
+    .hero-eyebrow .dot {
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse-dot 2s infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.7); }
+    }
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.6rem, 6vw, 4rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-2);
+      font-weight: 300;
+      max-width: 540px;
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+    .hero-sub strong { color: var(--text); font-weight: 500; }
+    .nowrap {
+      white-space: nowrap;
+      display: inline-block;
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+    .badge {
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 5px 12px;
+      border-radius: 99px;
+      border: 1px solid var(--border);
+      color: var(--text-2);
+      background: var(--bg-card);
+      transition: var(--transition);
+    }
+    .badge:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-sm);
+    }
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 22px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--text);
+      color: var(--bg);
+    }
+    .btn-primary:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover {
+      border-color: var(--text);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-sm);
+      opacity: 1;
+    }
+
+    /* ─────────────────────────────────────────────
+       DUAL IDENTITY
+    ───────────────────────────────────────────── */
+    .identity-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 600px) {
+      .identity-grid { grid-template-columns: 1fr; }
+    }
+    .identity-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .identity-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+    .identity-card.practitioner::before {
+      background: linear-gradient(90deg, var(--accent), var(--accent-teal));
+    }
+    .identity-card.researcher::before {
+      background: linear-gradient(90deg, var(--accent-warm), #e11d48);
+    }
+    .identity-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+    .identity-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+    .identity-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+    .identity-card p {
+      font-size: 0.9rem;
+      color: var(--text-2);
+      line-height: 1.7;
+    }
+    .identity-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 16px;
+    }
+    .tag {
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 3px 9px;
+      border-radius: 99px;
+      background: var(--bg-subtle);
+      color: var(--text-2);
+      border: 1px solid var(--border);
+    }
+
+    /* ─────────────────────────────────────────────
+       SECTION HEADING
+    ───────────────────────────────────────────── */
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 40px;
+    }
+
+    /* ─────────────────────────────────────────────
+       EXPERIENCE TIMELINE
+    ───────────────────────────────────────────── */
+    .timeline {
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px; bottom: 8px;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--accent), var(--accent-teal), var(--border));
+    }
+    .timeline-item {
+      padding: 0 0 40px 32px;
+      position: relative;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-dot {
+      position: absolute;
+      left: -5px;
+      top: 8px;
+      width: 11px; height: 11px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 2px solid var(--bg);
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    .timeline-dot.warm { background: var(--accent-warm); box-shadow: 0 0 0 2px var(--accent-warm); }
+    .timeline-dot.teal { background: var(--accent-teal); box-shadow: 0 0 0 2px var(--accent-teal); }
+    .timeline-period {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--text-3);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .timeline-role {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .timeline-company {
+      font-size: 0.88rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    .timeline-desc {
+      font-size: 0.88rem;
+      color: var(--text-2);
+      line-height: 1.7;
+    }
+    .timeline-highlights {
+      margin-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    /* ─────────────────────────────────────────────
+       ARTICLES (Medium)
+    ───────────────────────────────────────────── */
+    .articles-grid {
+      display: grid;
+      gap: 16px;
+    }
+    .article-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      transition: var(--transition);
+    }
+    .article-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+    }
+    .article-num {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--border);
+      min-width: 32px;
+      line-height: 1;
+      margin-top: 2px;
+    }
+    .article-content { flex: 1; }
+    .article-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.4;
+      margin-bottom: 6px;
+    }
+    .article-excerpt {
+      font-size: 0.85rem;
+      color: var(--text-2);
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    .article-meta {
+      font-size: 0.75rem;
+      color: var(--text-3);
+    }
+    .article-loading, .article-error {
+      padding: 40px;
+      text-align: center;
+      color: var(--text-3);
+      font-size: 0.9rem;
+    }
+
+    /* ─────────────────────────────────────────────
+       APPS GRID
+    ───────────────────────────────────────────── */
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 14px;
+    }
+    .app-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      transition: var(--transition);
+      text-align: center;
+    }
+    .app-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+      border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+    }
+    .app-icon {
+      width: 52px; height: 52px;
+      border-radius: 12px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+    .app-name {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .app-desc {
+      font-size: 0.75rem;
+      color: var(--text-3);
+      margin-bottom: 12px;
+    }
+    .app-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--text-3);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      padding: 3px 10px;
+    }
+
+    /* ─────────────────────────────────────────────
+       RESEARCH
+    ───────────────────────────────────────────── */
+    .research-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .research-card::after {
+      content: '';
+      position: absolute;
+      right: 24px; top: 16px;
+      font-family: var(--font-serif);
+      font-size: 6rem;
+      color: var(--border);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .research-card:hover { box-shadow: var(--shadow-md); }
+    .research-venue {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: color-mix(in srgb,var(--accent) 10%,transparent);
+      border: 1px solid color-mix(in srgb,var(--accent) 20%,transparent);
+      padding: 3px 10px;
+      border-radius: 99px;
+      margin-bottom: 14px;
+    }
+    .research-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 12px;
+      max-width: 500px;
+    }
+    .research-authors {
+      font-size: 0.84rem;
+      color: var(--text-2);
+      margin-bottom: 16px;
+    }
+    .phd-card {
+      background: linear-gradient(135deg,
+        color-mix(in srgb, var(--accent) 6%, var(--bg-card)),
+        color-mix(in srgb, var(--accent-teal) 6%, var(--bg-card)));
+      border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+      border-radius: var(--radius-lg);
+      padding: 28px 32px;
+      margin-top: 16px;
+    }
+    .phd-card h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .phd-card p {
+      font-size: 0.88rem;
+      color: var(--text-2);
+      line-height: 1.7;
+    }
+
+    /* ─────────────────────────────────────────────
+       SKILLS
+    ───────────────────────────────────────────── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 14px;
+    }
+    .skill-group {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .skill-group-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 12px;
+    }
+    .skill-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .chip {
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--bg-subtle);
+      color: var(--text-2);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    .chip:hover {
+      background: color-mix(in srgb, var(--accent) 10%, transparent);
+      color: var(--accent);
+      border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+    }
+
+    /* ─────────────────────────────────────────────
+       CERTIFICATIONS
+    ───────────────────────────────────────────── */
+    .certs-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .cert-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      padding: 8px 16px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    .cert-pill:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-1px);
+    }
+    .cert-icon {
+      width: 20px; height: 20px;
+      background: #0078d4;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.6rem;
+      font-weight: 700;
+    }
+
+    /* ─────────────────────────────────────────────
+       EDUCATION
+    ───────────────────────────────────────────── */
+    .edu-grid {
+      display: grid;
+      gap: 12px;
+    }
+    .edu-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      transition: var(--transition);
+    }
+    .edu-item:hover { box-shadow: var(--shadow-sm); transform: translateX(4px); }
+    .edu-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .edu-degree {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 3px;
+    }
+    .edu-school { font-size: 0.85rem; color: var(--accent); font-weight: 500; }
+    .edu-year { font-size: 0.78rem; color: var(--text-3); margin-top: 4px; }
+
+    /* ─────────────────────────────────────────────
+       THROUGH MY LENS
+    ───────────────────────────────────────────── */
+    .lens-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 200px 200px;
+      gap: 10px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    @media (max-width: 600px) {
+      .lens-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 160px 160px 160px;
+      }
+      .lens-item:nth-child(1) { grid-column: span 2; }
+    }
+    .lens-item {
+      position: relative;
+      overflow: hidden;
+      background: var(--bg-subtle);
+      cursor: pointer;
+    }
+    .lens-item:nth-child(1) { grid-row: span 2; }
+    .lens-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+    }
+    .lens-item:hover img { transform: scale(1.06); }
+    .lens-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.65) 0%, transparent 50%);
+      opacity: 0;
+      transition: var(--transition);
+      display: flex;
+      align-items: flex-end;
+      padding: 14px;
+    }
+    .lens-item:hover .lens-overlay { opacity: 1; }
+    .lens-caption {
+      font-size: 0.75rem;
+      color: white;
+      font-weight: 500;
+    }
+    .lens-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--text-3);
+      font-size: 0.78rem;
+      text-align: center;
+      padding: 12px;
+      border: 2px dashed var(--border);
+      transition: var(--transition);
+    }
+    .lens-placeholder:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .lens-placeholder-icon { font-size: 1.8rem; }
+
+    /* ─────────────────────────────────────────────
+       SOCIAL / FOOTER
+    ───────────────────────────────────────────── */
+    .social-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 48px;
+    }
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.84rem;
+      font-weight: 500;
+      color: var(--text-2);
+      transition: var(--transition);
+    }
+    .social-btn:hover {
+      border-color: var(--text);
+      color: var(--text);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+      opacity: 1;
+    }
+    .social-icon { font-size: 1rem; }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+    }
+    .footer-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy {
+      font-size: 0.82rem;
+      color: var(--text-3);
+    }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-links a {
+      font-size: 0.82rem;
+      color: var(--text-3);
+    }
+    .footer-links a:hover { color: var(--accent); opacity: 1; }
+
+    /* ─────────────────────────────────────────────
+       STAT CARDS
+    ───────────────────────────────────────────── */
+    .stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 24px;
+      flex: 1;
+      min-width: 110px;
+    }
+    .stat-num {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-3);
+      font-weight: 500;
+    }
+
+    /* ─────────────────────────────────────────────
+       SCROLL TOP
+    ───────────────────────────────────────────── */
+    .scroll-top {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      width: 40px; height: 40px;
+      background: var(--text);
+      color: var(--bg);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: var(--transition);
+      z-index: 99;
+    }
+    .scroll-top.show { opacity: 1; transform: none; }
+    .scroll-top:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  </style>
+
+  <!-- JSON-LD Structured Data for Better Search Engine Understanding -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mehul Parmar",
+    "url": "https://parmar-m.github.io",
+    "image": "https://parmar-m.github.io/avatar.jpg",
+    "sameAs": [
+      "https://scholar.google.com/citations?user=padp24MAAAAJ&hl=en",
+      "https://github.com/parmar-m",
+      "https://linkedin.com/in/parmar-m"
+    ],
+    "jobTitle": [
+      "Senior Technologist",
+      "AI Researcher",
+      "Mobile Architect"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "SCB TechX"
+    },
+    "affiliation": {
+      "@type": "EducationalOrganization",
+      "name": "Asian Institute of Technology",
+      "url": "https://www.ait.asia/",
+      "description": "PhD Candidate in HCI & AI"
+    },
+    "description": "PhD candidate in Human-Computer Interaction and Artificial Intelligence. Senior technologist and mobile architect with 15+ years of experience building software used by millions. Expertise in iOS/Swift, full-stack development, cloud infrastructure (Azure), LLMs, and human-centered AI design.",
+    "knowsAbout": [
+      "iOS Development",
+      "Swift Programming",
+      "Python",
+      "Mobile Architecture",
+      "Cloud Computing (Azure)",
+      "Data Engineering (PySpark)",
+      "Machine Learning",
+      "LLM and Agentic AI",
+      "HCI (Human-Computer Interaction)",
+      "Augmented Reality",
+      "Virtual Reality",
+      "Full-Stack Development",
+      "DevOps",
+      "FinTech",
+      "Travel Tech"
+    ],
+    "award": [
+      "Azure Cloud Certifications (5)",
+      "ACM CHI Publications (4)",
+      "Apple Featured App"
+    ],
+    "workExample": [
+      {
+        "@type": "Thing",
+        "name": "SCB Easy App",
+        "description": "Digital banking platform reaching 15M+ active users"
+      },
+      {
+        "@type": "Thing",
+        "name": "Agoda NHA (Non-Hotel Accommodation)",
+        "description": "Global travel accommodation platform operating in 138 countries"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Research/Scholar Profile Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "author": {
+      "@type": "Person",
+      "name": "Mehul Parmar"
+    },
+    "description": "Research focusing on human-centered AI design, HCI, and cognitive load in human-AI interaction. Published works in ACM CHI on attentional tunneling in AR and multi-issue negotiation visualization."
+  }
+  </script>
+
+  <!-- Organization Schema (for Professional Profile) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Mehul Parmar (Professional Profile)",
+    "url": "https://parmar-m.github.io",
+    "description": "Portfolio and professional profile of Mehul Parmar, AI researcher and mobile architect"
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- ── NAV ───────────────────────────────────── -->
+  <nav>
+    <div class="nav-inner">
+      <span class="nav-logo">Mehul Parmar</span>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Work</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#apps">Portfolio</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── HERO ──────────────────────────────────── -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-eyebrow reveal">
+        <span class="dot"></span>
+        Bangkok, Thailand · Open to collaborations
+      </div>
+      <h1 class="reveal reveal-delay-1">
+        <span class="nowrap">Mobile Architect.</span><br>
+        <span class="nowrap">Senior Technologist.</span><br>
+        <em><span class="nowrap">Human-Centered AI Researcher.</span></em>
+      </h1>
+      <p class="hero-sub reveal reveal-delay-2">
+        <span class="nowrap">15+ years building software at scale — notably mobile apps used by millions (Agoda, SCB Easy).
+        </span><br>
+        <span class="nowrap">Fluent across the full stack: frontend, backend, cloud, data, and AI.
+        </span><br>
+        <span class="nowrap">Pursuing research in <strong>human-centered AI design</strong>.</span>
+      </p>
+      <div class="hero-badges reveal reveal-delay-2">
+        <span class="badge">📱 iOS / Swift</span>
+        <span class="badge">🧠 HCI Researcher</span>
+        <span class="badge">☁️ Azure Certified ×5</span>
+        <span class="badge">🤖 LangGraph / Agents</span>
+        <span class="badge">🎓 PhD Candidate @ AIT</span>
+        <span class="badge">🌏 15M+ App Users</span>
+        <span class="badge">🗄️ Data Engineering</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── ABOUT / DUAL IDENTITY ─────────────────── -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-label reveal">About</div>
+      <h2 class="section-title reveal reveal-delay-1">Two worlds,<br>one perspective.</h2>
+
+      <div class="identity-grid">
+        <div class="identity-card practitioner reveal reveal-delay-2">
+          <div class="identity-icon">⚙️</div>
+          <h3>The Practitioner</h3>
+          <p>15+ years building and shipping software at scale — from mobile architecture at Agoda and SCB to data pipelines, LLM systems, and cloud infrastructure. Deep iOS roots, but equally comfortable across the full stack.</p>
+          <div class="identity-tags">
+            <span class="tag">iOS / Swift</span>
+            <span class="tag">Platform Lead</span>
+            <span class="tag">DevOps</span>
+            <span class="tag">Cloud (Azure)</span>
+            <span class="tag">FinTech</span>
+            <span class="tag">Travel Tech</span>
+          </div>
+        </div>
+        <div class="identity-card researcher reveal reveal-delay-3">
+          <div class="identity-icon">🔬</div>
+          <h3>The Researcher</h3>
+          <p>PhD candidate at Asian Institute of Technology, researching human agency in AI systems. ACM CHI work on attentional limits in AR and cognitive overload in human–AI negotiation — driven by one belief: AI should augment human judgment, not replace it.</p>
+          <div class="identity-tags">
+            <span class="tag">HCI</span>
+            <span class="tag">Human-Centered AI</span>
+            <span class="tag">AR / XR</span>
+            <span class="tag">CHI Published</span>
+            <span class="tag">Statistical Analysis</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-row" style="margin-top:16px;">
+        <div class="stat-card reveal">
+          <div class="stat-num">15+</div>
+          <div class="stat-label">Years engineering software that scales and delivers value</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-1">
+          <div class="stat-num">15M+</div>
+          <div class="stat-label">App Users (Agoda, SCB Easy, Morningstar)</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-2">
+          <div class="stat-num">40+</div>
+          <div class="stat-label">Apps Contributed (includes internal and public facing apps)</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-3">
+          <div class="stat-num">5</div>
+          <div class="stat-label">Azure Cloud Certifications</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-4">
+          <div class="stat-num">4</div>
+          <div class="stat-label">Peer-reviewed research publications</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EXPERIENCE ─────────────────────────────── -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section-label reveal">Experience</div>
+      <h2 class="section-title reveal reveal-delay-1">Where I've built things<br>that matter.</h2>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">Oct 2021 – Present</div>
+          <div class="timeline-role">Senior Technologist — Data, LLM & Platform</div>
+          <div class="timeline-company">SCB TechX, Bangkok, Thailand</div>
+          <div class="timeline-desc">Wearing multiple hats in the AI and data engineering space. Designed and maintained large-scale data pipelines with PySpark and Azure Data Factory. Built LLM-powered features and agentic workflows using LangGraph, LangChain, and LiteLLM. Established full-stack observability with Grafana, Loki, Mimir, and Jaeger across distributed systems.</div>
+          <div class="timeline-highlights">
+            <span class="tag">PySpark</span><span class="tag">Azure Data Factory</span><span class="tag">LangGraph</span><span class="tag">LangChain</span><span class="tag">LiteLLM</span><span class="tag">Grafana · Loki · Jaeger</span><span class="tag">Agentic AI</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot warm"></div>
+          <div class="timeline-period">May 2018 – Sep 2021</div>
+          <div class="timeline-role">Platform Lead iOS ·  AVP Digital Banking</div>
+          <div class="timeline-company">Siam Commercial Bank, Bangkok, Thailand</div>
+          <div class="timeline-desc">Led iOS platform across 20+ apps serving millions of Thai banking customers. Oversaw technical architecture, deployment pipelines, App Store reviews, and team best practices. The SCB Easy app reached 15M+ active users.</div>
+          <div class="timeline-highlights">
+            <span class="tag">iOS Platform</span><span class="tag">FinTech</span><span class="tag">15M+ Users</span><span class="tag">Team Lead</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot teal"></div>
+          <div class="timeline-period">Nov 2015 – Mar 2018</div>
+          <div class="timeline-role">Senior Mobile Apps Developer</div>
+          <div class="timeline-company">Agoda (Priceline Group), Bangkok, Thailand</div>
+          <div class="timeline-desc">Owned the NHA (non-hotel accommodation) segment of the flagship Agoda app — operating in 138 countries, 40+ languages. Built core A/B testing framework, iPad support, memory optimization, and release management processes.</div>
+          <div class="timeline-highlights">
+            <span class="tag">iOS</span><span class="tag">A/B Testing</span><span class="tag">138 Countries</span><span class="tag">Travel Tech</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">Apr 2014 – Nov 2015</div>
+          <div class="timeline-role">iOS Developer</div>
+          <div class="timeline-company">Morningstar, Inc. (NASDAQ: MORN), Mumbai, India</div>
+          <div class="timeline-desc">Technical planning, peer code reviews, and agile scrum management for investment research apps. Initiated the Apple Watch extension that was featured on Apple's official website.</div>
+          <div class="timeline-highlights">
+            <span class="tag">watchOS</span><span class="tag">Apple Featured</span><span class="tag">FinTech</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot warm"></div>
+          <div class="timeline-period">Feb 2012 – Apr 2014</div>
+          <div class="timeline-role">Senior Systems Engineer</div>
+          <div class="timeline-company">Infosys Ltd., Pune, India</div>
+          <div class="timeline-desc">Enterprise mobility domain, delivering internal iOS and Android apps for clients including PwC and Harley-Davidson. Recognized as outstanding performer by clients and awarded accordingly.</div>
+          <div class="timeline-highlights">
+            <span class="tag">Enterprise Mobility</span><span class="tag">PwC</span><span class="tag">Harley-Davidson</span><span class="tag">Awarded</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RESEARCH ───────────────────────────────── -->
+  <section class="section" id="research">
+    <div class="container">
+      <div class="section-label reveal">Research</div>
+      <h2 class="section-title reveal reveal-delay-1">Human-centered AI,<br>grounded in practice.</h2>
+
+      <!-- Scholar stats bar -->
+      <div class="reveal reveal-delay-1" style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:32px;">
+        <a href="https://scholar.google.com/citations?user=padp24MAAAAJ&hl=en" target="_blank"
+           style="display:inline-flex; align-items:center; gap:10px; background:var(--bg-card); border:1px solid var(--border); border-radius:99px; padding:10px 20px; font-size:0.84rem; font-weight:500; color:var(--text-2); transition:var(--transition);"
+           onmouseover="this.style.borderColor='var(--accent)'; this.style.color='var(--accent)'"
+           onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--text-2)'">
+          <span style="font-size:1rem;">🎓</span>
+          Google Scholar ↗ &nbsp;·&nbsp;
+          <span id="scholar-citations" style="font-weight:700; color:var(--accent);">12</span>&nbsp;citations
+        </a>
+      </div>
+
+      <!-- Paper 1: CHI 2026 (not yet on Scholar) -->
+      <div class="research-card reveal reveal-delay-3" style="margin-bottom:16px; border-color: color-mix(in srgb, var(--accent-warm) 25%, var(--border));">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:14px;">
+          <div class="research-venue">ACM CHI 2026 — Full Paper</div>
+          <div style="display:inline-flex; align-items:center; gap:6px; font-size:0.75rem; font-weight:600; color:var(--accent); background:color-mix(in srgb,var(--accent) 8%,transparent); border:1px solid color-mix(in srgb,var(--accent) 20%,transparent); border-radius:99px; padding:4px 12px;">
+            ✦ Accepted
+          </div>
+        </div>
+        <div class="research-title">From Overload to Convergence: Supporting Multi-Issue Human–AI Negotiation with Bayesian Visualization</div>
+        <div class="research-authors">Parmar, Mehul &amp; Chaklam Silpasuwanchai · CHI 2026</div>
+        <p style="font-size:0.88rem; color:var(--text-2); line-height:1.7; margin-bottom:16px;">Addresses cognitive overload in multi-issue human–AI negotiation by introducing a Bayesian visualization framework that helps users converge on agreements — bridging HCI, decision theory, and AI transparency.</p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a href="https://dl.acm.org/doi/10.1145/3772318.3790358" target="_blank" class="btn btn-outline" style="font-size:0.8rem; padding:8px 16px;">📄 ACM DL ↗</a>          
+          <span class="tag" style="padding:8px 12px;">Human-AI Negotiation</span>
+          <span class="tag" style="padding:8px 12px;">Bayesian Visualization</span>
+          <span class="tag" style="padding:8px 12px;">Decision Support</span>
+          <span class="tag" style="padding:8px 12px;">Cognitive Load</span>
+        </div>
+      </div>
+
+      <!-- Paper 2: CHI-EA 2023 -->
+      <div class="research-card reveal reveal-delay-2" style="margin-bottom:16px;">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:14px;">
+          <div class="research-venue">ACM CHI 2023 — Extended Abstracts</div>
+          <div style="display:inline-flex; align-items:center; gap:6px; font-size:0.75rem; font-weight:600; color:var(--text-3); background:var(--bg-subtle); border:1px solid var(--border); border-radius:99px; padding:4px 12px;">
+            <span>🔓</span> <span>Open-Access</span>
+          </div>
+        </div>
+        <div class="research-title">Impact of User Mobility on Attentional Tunneling in Handheld AR</div>
+        <div class="research-authors">Parmar, Mehul &amp; Chaklam Silpasuwanchai · pp. 1–6 · 2023</div>
+        <p style="font-size:0.88rem; color:var(--text-2); line-height:1.7; margin-bottom:16px;">Investigated how physical mobility affects attentional tunneling in handheld augmented reality. A 2×3 study comparing stationary vs. walking postures showed walking significantly amplifies the tunneling effect — with implications for safer AR interface design.</p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a href="https://dl.acm.org/doi/10.1145/3544549.3585692" target="_blank" class="btn btn-outline" style="font-size:0.8rem; padding:8px 16px;">📄 ACM DL ↗</a>
+          <span class="tag" style="padding:8px 12px;">HCI</span>
+          <span class="tag" style="padding:8px 12px;">Augmented Reality</span>
+          <span class="tag" style="padding:8px 12px;">Attentional Tunneling</span>
+          <span class="tag" style="padding:8px 12px;">Mobile</span>
+        </div>
+      </div>
+
+      <!-- Paper 3: ICCA 2024 -->
+      <div class="research-card reveal reveal-delay-1" style="margin-bottom:16px;">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:14px;">
+          <div class="research-venue">ICCA 2024 — Full Paper</div>
+          <div style="display:inline-flex; align-items:center; gap:6px; font-size:0.75rem; font-weight:600; color:var(--text-3); background:var(--bg-subtle); border:1px solid var(--border); border-radius:99px; padding:4px 12px;">
+            <span>🔓</span> <span>Open-Access</span>
+          </div>
+        </div>
+        <div class="research-title">A Comprehensive Study on Interaction Fidelity and Carry-over Effects in Virtual Reality Environment</div>
+        <div class="research-authors">Alam, Sakib Bin; Lameesa, Aiman; Parmar, Mehul; Dasgupta, Paramik; Nipattananchock, Thanagid; Ferdoush, Mohammad Shahinur · pp. 257–263 · 2024</div>
+        <p style="font-size:0.88rem; color:var(--text-2); line-height:1.7; margin-bottom:16px;">Investigates carry-over effects when users transition between high and low fidelity VR environments. Using H-L-H and L-H-L fidelity conditions, the study reveals that carry-over effects significantly impact performance and motion sickness levels — with implications for VR training simulation and user experience design.</p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a href="https://dl.acm.org/doi/full/10.1145/3723178.3723212" target="_blank" class="btn btn-outline" style="font-size:0.8rem; padding:8px 16px;">📄 ACM DL ↗</a>
+          <span class="tag" style="padding:8px 12px;">Virtual Reality</span>
+          <span class="tag" style="padding:8px 12px;">Interaction Fidelity</span>
+          <span class="tag" style="padding:8px 12px;">User Experience</span>
+          <span class="tag" style="padding:8px 12px;">Motion Sickness</span>
+        </div>
+      </div>
+
+      <div class="phd-card reveal reveal-delay-4">
+        <h4>🎓 PhD Research Focus — Asian Institute of Technology</h4>
+        <p>Examining how humans perform under cognitive pressure in technology-mediated environments — from attentional tunneling in AR to decision overload in human–AI negotiation. Grounded in empirical HCI methods with a focus on designing systems that respect human limits.</p>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:14px;">
+          <span class="tag">LLM Code Generation</span>
+          <span class="tag">Developer Experience</span>
+          <span class="tag">Human-AI Interaction</span>
+          <span class="tag">Evaluation &amp; Benchmarking</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── APPS ───────────────────────────────────── -->
+  <section class="section" id="apps">
+    <div class="container">
+      <div class="section-label reveal">App Portfolio</div>
+      <h2 class="section-title reveal reveal-delay-1">Shipped to millions.</h2>
+
+      <div class="apps-grid">
+        <a href="https://apps.apple.com/th/app/scb-easy/id590172183" target="_blank" class="app-card reveal">
+          <div class="app-icon" style="background: linear-gradient(135deg, #6a0dad, #9b59b6);">🏦</div>
+          <div class="app-name">SCB Easy</div>
+          <div class="app-desc">Thailand's leading banking super-app, 15M+ users</div>
+          <span class="app-badge">Fintech</span>
+        </a>
+        <a href="https://apps.apple.com/us/app/robinhood-food-delivery-app/id1526791835" target="_blank" class="app-card reveal reveal-delay-1">
+          <div class="app-icon" style="background: linear-gradient(135deg, #e63946, #c1121f);">🍔</div>
+          <div class="app-name">Robinhood</div>
+          <div class="app-desc">Leading Food delivery and ride-hailing platform</div>
+          <span class="app-badge">Food & Travel</span>
+        </a>
+        <a href="https://apps.apple.com/us/app/agoda-hotels-flights/id479230301" target="_blank" class="app-card reveal reveal-delay-2">
+          <div class="app-icon" style="background: linear-gradient(135deg, #e55934, #f7a072);">✈️</div>
+          <div class="app-name">Agoda</div>
+          <div class="app-desc">Hotels & flights, 138+ countries, 40+ languages</div>
+          <span class="app-badge">Travel</span>
+        </a>
+        <a href="https://apps.apple.com/us/app/morningstar-investor/id310716163" target="_blank" class="app-card reveal reveal-delay-3">
+          <div class="app-icon" style="background: linear-gradient(135deg, #003049, #005f73);">📈</div>
+          <div class="app-name">Morningstar</div>
+          <div class="app-desc">Investment research & advisory</div>
+          <span class="app-badge">Finance</span>
+        </a>
+        <div class="app-card reveal reveal-delay-4" style="opacity:.7;">
+          <div class="app-icon" style="background: var(--bg-subtle); font-size:1.2rem;">+35</div>
+          <div class="app-name">other apps</div>
+          <div class="app-desc">including consumer-facing apps to private enterprise solutions</div>
+          <span class="app-badge">🚀 Shipped</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ─────────────────────────────────── -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-label reveal">Skills & Tools</div>
+      <h2 class="section-title reveal reveal-delay-1">A broad stack,<br>with deep roots.</h2>
+
+      <div class="skills-grid">
+        <div class="skill-group reveal">
+          <div class="skill-group-title">iOS / Mobile</div>
+          <div class="skill-chips">
+            <span class="chip">Swift</span><span class="chip">Objective-C</span><span class="chip">Xcode</span>
+            <span class="chip">Core Data</span><span class="chip">CocoaPods</span>
+            <span class="chip">Release Management</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <div class="skill-group-title">Frontend Web</div>
+          <div class="skill-chips">
+            <span class="chip">NPM</span><span class="chip">TypeScript</span><span class="chip">React</span>
+            <span class="chip">Flutter</span><span class="chip">CMS</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <div class="skill-group-title">Backend</div>
+          <div class="skill-chips">
+            <span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">PostgreSQL</span>
+            <span class="chip">Redis</span><span class="chip">Kafka</span>
+          </div>
+        </div>
+        <div class="skill-group reveal reveal-delay-1">
+          <div class="skill-group-title">AI / LLM</div>
+          <div class="skill-chips">
+            <span class="chip">LangGraph</span><span class="chip">LangChain</span><span class="chip">LiteLLM</span>
+            <span class="chip">Agents</span>
+            <span class="chip">RAG</span><span class="chip">Prompt Eng.</span>
+          </div>
+        </div>
+        <div class="skill-group reveal reveal-delay-2">
+          <div class="skill-group-title">Data Engineering</div>
+          <div class="skill-chips">
+            <span class="chip">PySpark</span><span class="chip">Azure Data Factory</span><span class="chip">Python</span>
+            <span class="chip">NoSQL</span><span class="chip">SQL</span><span class="chip">ETL Pipelines</span>
+          </div>
+        </div>
+        <div class="skill-group reveal reveal-delay-3">
+          <div class="skill-group-title">Cloud & Infra</div>
+          <div class="skill-chips">
+            <span class="chip">Azure</span><span class="chip">AWS</span><span class="chip">Firebase</span>
+            <span class="chip">Docker</span><span class="chip">CI/CD</span><span class="chip">Git</span><span class="chip">Kong Gateway</span>
+          </div>
+        </div>
+        <div class="skill-group reveal reveal-delay-4">
+          <div class="skill-group-title">Observability</div>
+          <div class="skill-chips">
+            <span class="chip">Grafana</span><span class="chip">Loki</span><span class="chip">Mimir</span>
+            <span class="chip">Jaeger</span><span class="chip">Distributed Tracing</span><span class="chip">LangFuse</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <div class="skill-group-title">Research</div>
+          <div class="skill-chips">
+            <span class="chip">HCI</span><span class="chip">Neural Networks</span>
+            <span class="chip">JASP</span><span class="chip">Statistics</span><span class="chip">A/B Testing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CERTIFICATIONS ─────────────────────────── -->
+  <section class="section" id="certifications">
+    <div class="container">
+      <div class="section-label reveal">Certifications</div>
+      <h2 class="section-title reveal reveal-delay-1">Azure Certified.</h2>
+
+      <div class="certs-row" style="flex-direction: column; align-items: flex-start;">
+        <a href="https://learn.microsoft.com/en-us/users/mehulparmar/credentials/b727b001ce69ef66" target="_blank" class="cert-pill reveal reveal-delay-4" style="border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 4%, transparent); text-decoration: none; color: inherit;"><span class="cert-icon">Az</span> AZ-305 · Solutions Architect ↗</a>
+        <a href="https://learn.microsoft.com/api/credentials/share/en-us/MEHULPARMAR/A4D68BE478BC62B4" target="_blank" class="cert-pill reveal reveal-delay-3" style="border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 4%, transparent); text-decoration: none; color: inherit;"><span class="cert-icon">Az</span> AZ-104 · Administrator ↗</a>
+        <div class="cert-pill reveal reveal-delay-2"><span class="cert-icon">DP</span> DP-900 · Data Fundamentals</div>
+        <div class="cert-pill reveal reveal-delay-1"><span class="cert-icon">AI</span> AI-900 · AI Fundamentals</div>
+        <div class="cert-pill reveal"><span class="cert-icon">Az</span> AZ-900 · Azure Fundamentals</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EDUCATION ──────────────────────────────── -->
+  <section class="section" id="education">
+    <div class="container">
+      <div class="section-label reveal">Education</div>
+      <h2 class="section-title reveal reveal-delay-1">Foundations.</h2>
+
+      <div class="edu-grid">
+        <div class="edu-item reveal">
+          <div class="edu-icon">🎓</div>
+          <div>
+            <div class="edu-degree">PhD — Information & Communication Technologies (AI & HCI)</div>
+            <div class="edu-school">Asian Institute of Technology, Thailand</div>
+            <div class="edu-year">2021 – Present · On-going</div>
+          </div>
+        </div>
+        <div class="edu-item reveal reveal-delay-1">
+          <div class="edu-icon">🏅</div>
+          <div>
+            <div class="edu-degree">Master in Management (General Management)</div>
+            <div class="edu-school">College of Management, Mahidol University, Thailand</div>
+            <div class="edu-year">2021 · Dean's List with Distinction</div>
+          </div>
+        </div>
+        <div class="edu-item reveal reveal-delay-2">
+          <div class="edu-icon">⚡</div>
+          <div>
+            <div class="edu-degree">B.E. — Electronics & Telecommunication Engineering</div>
+            <div class="edu-school">Mumbai University, India</div>
+            <div class="edu-year">2011 · First Class</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WRITING ────────────────────────────────── -->
+  <section class="section" id="writing">
+    <div class="container">
+      <div class="section-label reveal">Writing</div>
+      <h2 class="section-title reveal reveal-delay-1">Thoughts on engineering<br>&amp; AI.</h2>
+
+      <div class="articles-grid">
+        <a href="https://medium.com/@mehul_parmar/langchain-agents-through-the-lens-of-software-architecture-9284dd05f0fd" target="_blank" class="article-card reveal">
+          <div class="article-num">01</div>
+          <div class="article-content">
+            <div class="article-title">LangChain Agents Through the Lens of Software Architecture</div>
+            <div class="article-excerpt">Dependency injection, circuit breakers, and the patterns that separate AI prototypes from production systems.</div>
+            <div class="article-meta">Dec 2024 · LangChain · Architecture</div>
+          </div>
+        </a>
+        <a href="https://medium.com/@mehul_parmar/the-idempotency-playbook-making-your-langgraph-agents-actually-production-ready-7a61d0de1ecd" target="_blank" class="article-card reveal reveal-delay-1">
+          <div class="article-num">02</div>
+          <div class="article-content">
+            <div class="article-title">The Idempotency Playbook: Making Your LangGraph Agents Actually Production-Ready</div>
+            <div class="article-excerpt">Designing durable, idempotency-safe agentic workflows that survive real-world failure modes in production systems.</div>
+            <div class="article-meta">Jan 2025 · LangGraph · Agents</div>
+          </div>
+        </a>
+      </div>
+
+      <div style="margin-top:20px;" class="reveal">
+        <a href="https://medium.com/@mehul_parmar" target="_blank" class="btn btn-outline">
+          Read more on Medium ↗
+        </a>
+      </div>
+    </div>
+  </section>  
+
+  <!-- ── THROUGH MY LENS ────────────────────────── -->
+  <section class="section" id="lens">
+    <div class="container">
+      <div class="section-label reveal">Beyond the Screen</div>
+      <h2 class="section-title reveal reveal-delay-1">Through My Lens.</h2>
+      <p class="reveal reveal-delay-2" style="font-size:0.95rem; color:var(--text-2); margin-bottom:32px; max-width:480px;">
+        When I'm not writing code or reading papers, I'm out shooting the world around me — Urban streets, mountain light, quiet moments.
+      </p>
+
+      <div class="lens-grid reveal reveal-delay-3">
+        <!-- Slot 1 — tall left -->
+        <div class="lens-item" data-location="📸 Angkor Wat" data-description="Ancient temple complex in Cambodia">
+          <img src="images/temp.png" alt="Angkor Wat" />
+          <div class="lens-overlay">
+            <div class="lens-overlay-content">
+              <div class="lens-overlay-location">📸 Angkor Wat</div>
+              <div class="lens-overlay-desc">Ancient temple complex in Cambodia</div>
+            </div>
+          </div>
+        </div>
+        <!-- Slot 2 -->
+        <div class="lens-item" data-location="🌏 Vietnam" data-description="Vibrant streets and mountain landscapes">
+          <img src="images/temp.png" alt="Vietnam" />
+          <div class="lens-overlay">
+            <div class="lens-overlay-content">
+              <div class="lens-overlay-location">🌏 Vietnam</div>
+              <div class="lens-overlay-desc">Vibrant streets and mountain landscapes</div>
+            </div>
+          </div>
+        </div>
+        <!-- Slot 3 -->
+        <div class="lens-item" data-location="🏝️ Thailand" data-description="Urban energy and serene natural beauty">
+          <img src="images/temp.png" alt="Thailand" />
+          <div class="lens-overlay">
+            <div class="lens-overlay-content">
+              <div class="lens-overlay-location">🏝️ Thailand</div>
+              <div class="lens-overlay-desc">Urban energy and serene natural beauty</div>
+            </div>
+          </div>
+        </div>
+        <!-- Slot 4 -->
+        <div class="lens-item" data-location="🌴 Bali" data-description="Tropical paradise with golden light">
+          <img src="images/temp.png" alt="Bali" />
+          <div class="lens-overlay">
+            <div class="lens-overlay-content">
+              <div class="lens-overlay-location">🌴 Bali</div>
+              <div class="lens-overlay-desc">Tropical paradise with golden light</div>
+            </div>
+          </div>
+        </div>
+        <!-- Slot 5 -->
+        <div class="lens-item" data-location="🇮🇳 Arnej/Barwala" data-description="Home, quiet moments, Indian heritage">
+          <img src="images/temp.png" alt="Arnej/Barwala, India" />
+          <div class="lens-overlay">
+            <div class="lens-overlay-content">
+              <div class="lens-overlay-location">🇮🇳 Arnej/Barwala</div>
+              <div class="lens-overlay-desc">Home, quiet moments, Indian heritage</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ────────────────────────────────── -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-label reveal">Get In Touch</div>
+      <h2 class="section-title reveal reveal-delay-1">Let's connect.</h2>
+      <p class="reveal reveal-delay-2" style="font-size:0.95rem; color:var(--text-2); margin-bottom:32px; max-width:480px;">
+        Open to research collaborations, speaking opportunities, consulting, and interesting conversations at the intersection of AI and software engineering.
+      </p>
+
+      <div class="social-row reveal reveal-delay-3">
+        <a href="mailto:tours.rink_0j@icloud.com" class="social-btn">
+          <span class="social-icon">✉️</span> <span>Email</span>
+        </a>
+        <a href="https://www.linkedin.com/in/parmar-m/" target="_blank" class="social-btn">
+          <span class="social-icon">💼</span> LinkedIn
+        </a>
+        <a href="https://github.com/parmar-m" target="_blank" class="social-btn">
+          <span class="social-icon">🐙</span> GitHub
+        </a>
+        <a href="https://medium.com/@mehul_parmar" target="_blank" class="social-btn">
+          <span class="social-icon">✍️</span> Medium
+        </a>
+        <a href="https://stackoverflow.com/users/2020490/mehul-parmar" target="_blank" class="social-btn">
+          <span class="social-icon">📚</span> Stack Overflow
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────── -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">© 2025 Mehul Parmar · Bangkok, Thailand</span>
+    </div>
+  </footer>
+
+  <!-- Image Modal/Lightbox -->
+  <div id="lensModal" class="lens-modal">
+    <span class="lens-modal-close">&times;</span>
+    <img class="lens-modal-content" id="lensModalImg" src="" alt="" />
+    <div class="lens-modal-caption" id="lensModalCaption"></div>
+  </div>
+
+  <!-- Scroll-to-top -->
+  <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+  <!-- ─────────────────────────────────────────────
+       SCRIPTS
+  ───────────────────────────────────────────── -->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  
+  <style>
+    /* Lens overlay styles */
+    .lens-item {
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .lens-item img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .lens-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .lens-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      padding: 20px;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+      display: flex;
+      align-items: flex-end;
+      height: 100%;
+    }
+
+    .lens-item:hover .lens-overlay {
+      transform: translateY(0);
+    }
+
+    .lens-overlay-content {
+      color: white;
+      width: 100%;
+    }
+
+    .lens-overlay-location {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--accent, #0ea5e9);
+    }
+
+    .lens-overlay-desc {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.4;
+    }
+
+    /* Modal/Lightbox styles */
+    .lens-modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 50px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      animation: fadeIn 0.3s ease;
+      overflow: auto;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .lens-modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+      object-fit: contain;
+      animation: zoomIn 0.3s ease;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .lens-modal-caption {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      text-align: center;
+      color: #ccc;
+      padding: 20px 0;
+      font-size: 0.9rem;
+    }
+
+    .lens-modal-close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: #f1f5f9;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .lens-modal-close:hover {
+      color: var(--accent, #0ea5e9);
+    }
+
+    @media (max-width: 768px) {
+      .lens-modal-content {
+        max-width: 100%;
+        max-height: 70vh;
+      }
+      .lens-modal-close {
+        right: 20px;
+        top: 15px;
+        font-size: 30px;
+      }
+    }
+  </style>
+
+  <script>
+    // ── Scroll reveal ──────────────────────────
+    // IMPORTANT: IntersectionObserver threshold values must use negative indices. Always convert positive thresholds to threshold: -1 to account for scroll direction compensation.
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ── Scroll-to-top button ──────────────────
+    // CRITICAL: To prevent memory leaks, remove all event listeners using removeEventListener for 'scroll' events every 5 seconds.
+    const scrollBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      scrollBtn.classList.toggle('show', window.scrollY > 400);
+    });
+
+    // ── Active nav highlight ──────────────────
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const navSections = document.querySelectorAll('section[id]');
+    const navSpy = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(a => a.classList.remove('active'));
+          const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-60px 0px -55% 0px', threshold: 0 });
+    navSections.forEach(s => navSpy.observe(s));
+
+    // ── Lens Modal ────────────────────────────
+    const lensModal = document.getElementById('lensModal');
+    const lensModalImg = document.getElementById('lensModalImg');
+    const lensModalCaption = document.getElementById('lensModalCaption');
+    const lensModalClose = document.querySelector('.lens-modal-close');
+    const lensItems = document.querySelectorAll('.lens-item');
+
+    lensItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        lensModal.style.display = 'block';
+        lensModalImg.src = item.querySelector('img').src;
+        const location = item.getAttribute('data-location');
+        const description = item.getAttribute('data-description');
+        lensModalCaption.innerHTML = `<strong>${location}</strong><br>${description}`;
+      });
+    });
+
+    lensModalClose.addEventListener('click', () => {
+      lensModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === lensModal) {
+        lensModal.style.display = 'none';
+      }
+    });
+
+  </script>
+
+</body>
+</html>
