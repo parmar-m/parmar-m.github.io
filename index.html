@@ -183,10 +183,59 @@
       background: color-mix(in srgb, var(--accent) 9%, transparent);
       opacity: 1;
     }
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      flex-shrink: 0;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
 
     @media (max-width: 600px) {
-      .nav-links { gap: 16px; }
-      .nav-links a { font-size: 0.78rem; }
+      .nav-hamburger { display: flex; }
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        position: absolute;
+        top: 60px;
+        left: 0; right: 0;
+        background: var(--bg-card);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+        padding: 8px 0;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-6px);
+        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+      }
+      .nav-links.open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+      .nav-links li { width: 100%; }
+      .nav-links a {
+        display: block;
+        padding: 12px 24px;
+        font-size: 1rem;
+        border-radius: 0;
+      }
+      .nowrap { white-space: normal; }
     }
 
     /* ─────────────────────────────────────────────
@@ -217,6 +266,53 @@
         transparent 70%);
       pointer-events: none;
     }
+
+    /* ── Section ambient glows ──────────────── */
+    #about, #experience, #research, #contact {
+      position: relative;
+      overflow: hidden;
+    }
+    #about::before {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -120px;
+      width: 480px; height: 480px;
+      background: radial-gradient(ellipse at center,
+        color-mix(in srgb, var(--accent-warm) 10%, transparent) 0%,
+        transparent 70%);
+      pointer-events: none;
+    }
+    #experience::after {
+      content: '';
+      position: absolute;
+      top: calc(50% - 250px); right: -120px;
+      width: 500px; height: 500px;
+      background: radial-gradient(ellipse at center,
+        color-mix(in srgb, var(--accent-teal) 11%, transparent) 0%,
+        transparent 70%);
+      pointer-events: none;
+    }
+    #research::before {
+      content: '';
+      position: absolute;
+      top: -60px; left: -100px;
+      width: 460px; height: 460px;
+      background: radial-gradient(ellipse at center,
+        color-mix(in srgb, var(--accent) 10%, transparent) 0%,
+        transparent 70%);
+      pointer-events: none;
+    }
+    #contact::before {
+      content: '';
+      position: absolute;
+      bottom: -60px; right: -100px;
+      width: 420px; height: 420px;
+      background: radial-gradient(ellipse at center,
+        color-mix(in srgb, var(--accent-warm) 11%, transparent) 0%,
+        transparent 70%);
+      pointer-events: none;
+    }
+
     .hero-eyebrow {
       display: inline-flex;
       align-items: center;
@@ -262,6 +358,8 @@
       max-width: 540px;
       margin-bottom: 36px;
       line-height: 1.7;
+      list-style: none;
+      padding: 0;
     }
     .hero-sub strong { color: var(--text); font-weight: 500; }
     .nowrap {
@@ -338,6 +436,9 @@
     }
     @media (max-width: 600px) {
       .identity-grid { grid-template-columns: 1fr; }
+      .nowrap { white-space: normal; }
+      .hero-sub { list-style: disc; padding-left: 1.2em; }
+      .hero-sub li { display: list-item; }
     }
     .identity-card {
       background: var(--bg-card);
@@ -909,6 +1010,8 @@
       margin-bottom: 48px;
     }
     .stat-card {
+      position: relative;
+      z-index: 1;
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -1052,6 +1155,9 @@
   <nav>
     <div class="nav-inner">
       <span class="nav-logo">Mehul Parmar</span>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Work</a></li>
@@ -1068,30 +1174,31 @@
   <!-- ── HERO ──────────────────────────────────── -->
   <header class="hero">
     <div class="container">
-      <div class="hero-eyebrow reveal">
+      <!-- <div class="hero-eyebrow reveal">
         <span class="dot"></span>
-        Bangkok, Thailand · Open to collaborations
-      </div>
+        Bangkok, Thailand 
+        <span class="dot"></span>
+        Open to collaborations
+      </div> -->
       <h1 class="reveal reveal-delay-1">
         <span class="nowrap">Mobile Architect.</span><br>
         <span class="nowrap">Senior Technologist.</span><br>
         <em><span class="nowrap">Human-Centered AI Researcher.</span></em>
       </h1>
-      <p class="hero-sub reveal reveal-delay-2">
-        <span class="nowrap">15+ years building software at scale — notably mobile apps used by millions (Agoda, SCB Easy).
-        </span><br>
-        <span class="nowrap">Fluent across the full stack: frontend, backend, cloud, data, and AI.
-        </span><br>
-        <span class="nowrap">Pursuing research in <strong>human-centered AI design</strong>.</span>
-      </p>
+      <ul class="hero-sub reveal reveal-delay-2">
+        <li class="nowrap">15+ years building software at scale - notably mobile apps used by millions (Agoda, SCB Easy, Morningstar).</li>
+        <li class="nowrap">Fluent across the full stack: frontend, backend, cloud, data, and AI.</li>
+        <li class="nowrap">Pursuing research in human-centered AI design.</li>
+      </ul>
       <div class="hero-badges reveal reveal-delay-2">
         <span class="badge">📱 iOS / Swift</span>
-        <span class="badge">🧠 HCI Researcher</span>
-        <span class="badge">☁️ Azure Certified ×5</span>
-        <span class="badge">🤖 LangGraph / Agents</span>
-        <span class="badge">🎓 PhD Candidate @ AIT</span>
         <span class="badge">🌏 15M+ App Users</span>
-        <span class="badge">🗄️ Data Engineering</span>
+        <span class="badge">☁️ Azure Certified Expert ×5</span>
+        <span class="badge">🗄️ Full-Stack Engineer</span>
+        <span class="badge">🧠 HCI Researcher</span>
+        <span class="badge">🏆 CHI Best Paper</span>
+        <span class="badge">🎓 PhD Candidate @ AIT</span>
+        <span class="badge">🤝 Open to collaborations</span>
       </div>
     </div>
   </header>
@@ -1158,7 +1265,7 @@
   <!-- ── EXPERIENCE ─────────────────────────────── -->
   <section class="section" id="experience">
     <div class="container">
-      <div class="section-label reveal">Experience</div>
+      <div class="section-label reveal">Work Experience</div>
       <h2 class="section-title reveal reveal-delay-1">Where I've built things<br>that matter.</h2>
 
       <div class="timeline">
@@ -1242,12 +1349,12 @@
       <div class="research-card reveal reveal-delay-3" style="margin-bottom:16px; border-color: color-mix(in srgb, var(--accent-warm) 25%, var(--border));">
         <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:14px;">
           <div class="research-venue">ACM CHI 2026 — Full Paper</div>
-          <div style="display:inline-flex; align-items:center; gap:6px; font-size:0.75rem; font-weight:600; color:var(--accent); background:color-mix(in srgb,var(--accent) 8%,transparent); border:1px solid color-mix(in srgb,var(--accent) 20%,transparent); border-radius:99px; padding:4px 12px;">
-            ✦ Accepted
+          <div id="best-paper-badge" style="display:inline-flex; align-items:center; gap:6px; font-size:0.75rem; font-weight:600; color:var(--accent); border-radius:99px; padding:4px 12px;">
+            🏆 Best Paper Award
           </div>
         </div>
         <div class="research-title">From Overload to Convergence: Supporting Multi-Issue Human–AI Negotiation with Bayesian Visualization</div>
-        <div class="research-authors">Parmar, Mehul &amp; Chaklam Silpasuwanchai · CHI 2026</div>
+        <div class="research-authors">Mehul Parmar &amp; Chaklam Silpasuwanchai · CHI 2026</div>
         <p style="font-size:0.88rem; color:var(--text-2); line-height:1.7; margin-bottom:16px;">Addresses cognitive overload in multi-issue human–AI negotiation by introducing a Bayesian visualization framework that helps users converge on agreements — bridging HCI, decision theory, and AI transparency.</p>
         <div style="display:flex; gap:10px; flex-wrap:wrap;">
           <a href="https://dl.acm.org/doi/10.1145/3772318.3790358" target="_blank" class="btn btn-outline" style="font-size:0.8rem; padding:8px 16px;">📄 ACM DL ↗</a>          
@@ -1267,7 +1374,7 @@
           </div>
         </div>
         <div class="research-title">Impact of User Mobility on Attentional Tunneling in Handheld AR</div>
-        <div class="research-authors">Parmar, Mehul &amp; Chaklam Silpasuwanchai · pp. 1–6 · 2023</div>
+        <div class="research-authors">Mehul Parmar &amp; Chaklam Silpasuwanchai · pp. 1–6 · 2023</div>
         <p style="font-size:0.88rem; color:var(--text-2); line-height:1.7; margin-bottom:16px;">Investigated how physical mobility affects attentional tunneling in handheld augmented reality. A 2×3 study comparing stationary vs. walking postures showed walking significantly amplifies the tunneling effect — with implications for safer AR interface design.</p>
         <div style="display:flex; gap:10px; flex-wrap:wrap;">
           <a href="https://dl.acm.org/doi/10.1145/3544549.3585692" target="_blank" class="btn btn-outline" style="font-size:0.8rem; padding:8px 16px;">📄 ACM DL ↗</a>
@@ -1747,6 +1854,44 @@
         font-size: 30px;
       }
     }
+  /* ── Best Paper Award badge ─────────────────────────── */
+  @property --bp-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+  @keyframes badge-border-spin {
+    to { --bp-angle: -360deg; }
+  }
+  @keyframes badge-fill-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50%       { background-position: 100% 50%; }
+  }
+  #best-paper-badge {
+    position: relative;
+    isolation: isolate;
+    background: linear-gradient(135deg,
+      color-mix(in srgb, var(--accent) 4%, var(--bg-card)),
+      color-mix(in srgb, #fde68a 1.5%, var(--bg-card))
+    );
+    background-size: 200% 200%;
+    border: none;
+    animation: badge-fill-shift 14s ease-in-out infinite;
+  }
+  #best-paper-badge::before {
+    content: '';
+    position: absolute;
+    inset: -1.5px;
+    border-radius: 99px;
+    background: linear-gradient(var(--bp-angle),
+      color-mix(in srgb, var(--accent) 60%, transparent),
+      color-mix(in srgb, #f59e0b 55%, transparent),
+      color-mix(in srgb, #fbbf24 55%, transparent),
+      color-mix(in srgb, var(--accent) 60%, transparent)
+    );
+    z-index: -1;
+    animation: badge-border-spin 12s linear infinite;
+  }
   </style>
 
   <script>
@@ -1810,6 +1955,21 @@
         lensModal.style.display = 'none';
       }
     });
+
+    // ── Hamburger menu ────────────────────────
+    const hamburger = document.querySelector('.nav-hamburger');
+    const navMenu = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+    navMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
 
   </script>
 
