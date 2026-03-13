@@ -95,6 +95,17 @@
       line-height: 1.65;
       overflow-x: hidden;
     }
+
+    /* Basic anti-copy deterrent on key visible content sections. */
+    .hero,
+    .section,
+    footer {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-touch-callout: none;
+    }
     a { color: var(--accent); text-decoration: none; transition: var(--transition); }
     a:hover { opacity: 0.75; }
     img { max-width: 100%; display: block; }
@@ -1704,7 +1715,7 @@
         <a href="https://stackoverflow.com/users/2020490/mehul-parmar" target="_blank" class="social-btn">
           <span class="social-icon">📚</span> Stack Overflow
         </a>
-        <a href="mailto:tours.rink_0j@icloud.com" class="social-btn">
+        <a href="#" id="emailLink" class="social-btn" rel="nofollow" aria-label="Open email composer">
           <span class="social-icon">✉️</span> <span>Email</span>
         </a>        
       </div>
@@ -1992,6 +2003,61 @@
         navMenu.classList.remove('open');
         hamburger.setAttribute('aria-expanded', 'false');
       });
+    });
+
+    // Obfuscate email in source; construct it only on user interaction.
+    const emailLink = document.getElementById('emailLink');
+    if (emailLink) {
+      emailLink.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        const user = ['078', 'parmar', 'mehul'].reverse().join('');
+        const domain = ['com', 'gmail'].reverse().join('.');
+        const email = `${user}@${domain}`;
+
+        emailLink.setAttribute('href', `mailto:${email}`);
+        emailLink.setAttribute('title', email);
+        window.location.href = `mailto:${email}`;
+      });
+    }
+
+    // Basic deterrents: disable common copy/inspect interaction paths.
+    document.addEventListener('contextmenu', (event) => {
+      event.preventDefault();
+    });
+
+    document.addEventListener('dragstart', (event) => {
+      event.preventDefault();
+    });
+
+    document.addEventListener('copy', (event) => {
+      event.preventDefault();
+    });
+
+    document.addEventListener('cut', (event) => {
+      event.preventDefault();
+    });
+
+    const isEditableTarget = (target) => {
+      if (!target || !(target instanceof Element)) {
+        return false;
+      }
+      return target.closest('input, textarea, [contenteditable="true"]') !== null;
+    };
+
+    document.addEventListener('keydown', (event) => {
+      if (!(event.ctrlKey || event.metaKey)) {
+        return;
+      }
+
+      if (isEditableTarget(event.target)) {
+        return;
+      }
+
+      const key = event.key.toLowerCase();
+      if (key === 'c' || key === 'x' || key === 'p') {
+        event.preventDefault();
+      }
     });
 
 
